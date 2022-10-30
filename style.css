@@ -1,0 +1,119 @@
+/* RESET */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.topnav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  height: 50px;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
+
+.topnav-container a {
+  width: 4em;
+  height: 2em;
+}
+
+.topnav-container a .logo-img {
+  width: 100%;
+}
+
+.topnav-container nav input {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.topnav-container nav input:checked ~ div:first-of-type {
+  transform: rotate(-45deg) translate(-4.5px, 4.5px);
+  -webkit-transform: rotate(-45deg) translate(-4.5px, 4.5px);
+}
+
+.topnav-container nav input:checked ~ div:nth-of-type(2) {
+  opacity: 0;
+}
+
+.topnav-container nav input:checked ~ div:nth-of-type(3) {
+  transform: rotate(45deg) translate(-4.5px, -4.5px);
+  -webkit-transform: rotate(45deg) translate(-4.5px, -4.5px);
+}
+
+.topnav-container nav input:checked ~ ul {
+  max-height: 200px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.topnav-container nav .bar {
+  width: 25px;
+  height: 2.5px;
+  background-color: #000;
+  margin: 4px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.topnav-container nav ul {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #723fa3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.topnav-container nav ul li {
+  list-style-type: none;
+  padding-top: 15px;
+}
+
+.topnav-container nav ul li:last-of-type {
+  padding-bottom: 15px;
+}
+
+.topnav-container nav ul li a {
+  color: #fff;
+  font-family: monospace;
+  font-size: 1em;
+  letter-spacing: 0;
+  line-height: 1.75em;
+  text-decoration: none;
+}
+
+.topnav-container nav ul li a:hover, .topnav-container nav ul li a:focus {
+  color: #fabee3;
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=style.css.map */

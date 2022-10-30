@@ -1,0 +1,108 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.topnav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 50px;
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+
+  a {
+    width: 4em;
+    height: 2em;
+
+    .logo-img {
+      width: 100%;
+    }
+  }
+
+  nav {
+    input {
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 50;
+
+      &:checked ~ div {
+        &:first-of-type {
+          transform: rotate(-45deg) translate(-4.5px, 4.5px);
+          -webkit-transform: rotate(-45deg) translate(-4.5px, 4.5px);
+        }
+
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        &:nth-of-type(3) {
+          transform: rotate(45deg) translate(-4.5px, -4.5px);
+          -webkit-transform: rotate(45deg) translate(-4.5px, -4.5px);
+        }
+      }
+
+      // checkbox hack
+      &:checked ~ ul {
+        max-height: 200px; // show the navbar items from 0px -> 200px with a transition
+        transition: all 0.5s;
+      }
+    }
+
+    .bar {
+      width: 25px;
+      height: 2.5px;
+      background-color: #000;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    ul {
+      position: absolute;
+      top: 50px; // move 50px from the top (which is the height of the navbar)
+      left: 0;
+      width: 100%;
+      background-color: #723fa3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 15px;
+      max-height: 0; // start hidden
+      overflow: hidden;
+
+      li {
+        list-style-type: none;
+        padding-top: 15px;
+
+        &:last-of-type {
+          padding-bottom: 15px;
+        }
+
+        a {
+          color: #fff;
+          font-family: monospace;
+          font-size: 1em;
+          letter-spacing: 0;
+          line-height: 1.75em;
+          text-decoration: none;
+
+          &:hover,
+          &:focus {
+            color: #fabee3;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
